@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "CACHE_READ_ONLY=true react-native run-android",
+    "ios": "CACHE_READ_ONLY=true react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "start": "CACHE_READ_ONLY=true react-native start",
+    "test": "jest",
+    "build": "react-native bundle --verbose --platform ios --dev true --entry-file index.js --bundle-output dist/ios/main.jsbundle --assets-dest dist/ios --config metro.config.js --minify false --reset-cache"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.804.0",
     "react": "19.0.0",
     "react-native": "0.78.2"
   },

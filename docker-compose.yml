@@ -1,0 +1,13 @@
+services:
+  localstack:
+    container_name: remote-cache-metro_localstack_s3
+    environment:
+      AWS_DEFAULT_REGION: eu-west-1
+      S3_PORT_EXTERNAL: '4566'
+      SERVICES: s3
+    image: localstack/localstack:latest
+    ports:
+      - '4566:4566'
+    volumes:
+      - /tmp/localstack:/var/lib/localstack:rw
+      - ./support/localstack/s3/init:/docker-entrypoint-initaws.d
