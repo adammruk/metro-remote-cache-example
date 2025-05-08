@@ -16,12 +16,18 @@ This playground was created to experiment with [Metro Remote Cache](https://metr
 3. Create bucket for cache: `npm run create-bucket`
 > **_NOTE:_**  S3 in localstack is not persistent. After shuting down the container, it will clear it's content and remove the bucket. You need to run `npm run create-bucket` everytime after docker container is up.
 
+> **_NOTE:_** You may be prompted to run `aws configure`. In such case provide: 
+> - AWS Access Key ID: `test`
+> - AWS Secret Access Key: `test`
+> - Default region name: `eu-west-1`
+> - Default output format: `json`
+
 4. Install the app on a simulator: `npm run ios` or `npm run android`
 
 
 ### Creating JS bundle
 
-Make sure Localstack container is up and run `npm run build`
+Make sure Localstack container is up and run `npm run bundle`
 
 
 Technically instead of S3 `FileStore` could be use, but with this setup we can investigate what keys are requested, get stats about cache hit/miss and so on.

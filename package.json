@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "CACHE_READ_ONLY=true react-native start",
     "test": "jest",
-    "build": "react-native bundle --verbose --platform ios --dev true --entry-file index.js --bundle-output dist/ios/main.jsbundle --assets-dest dist/ios --config metro.config.js --minify false --reset-cache",
+    "bundle": "react-native bundle --verbose --platform ios --dev true --entry-file index.js --bundle-output dist/ios/main.jsbundle --assets-dest dist/ios --config metro.config.js --minify false --reset-cache",
     "create-bucket": "aws s3api create-bucket --bucket cache --region eu-west-1 --endpoint-url http://localhost:4566 --create-bucket-configuration LocationConstraint=eu-west-1"
   },
   "dependencies": {
